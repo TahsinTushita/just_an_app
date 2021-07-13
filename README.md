@@ -10,7 +10,7 @@ Again for running the frontend -
 
 
 ```sh
-  $ cd just_an_app
+  $ cd just-an-app
   $ npm install
   $ npm start
 ```
