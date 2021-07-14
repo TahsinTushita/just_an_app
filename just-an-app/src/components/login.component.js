@@ -2,6 +2,7 @@ import { Component } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
+import { isEmail } from "validator";
 
 import AuthService from "../services/auth.service";
 
@@ -15,9 +16,22 @@ const required = (value) => {
   }
 };
 
+const email = (value) => {
+  if (!isEmail(value)) {
+    return (
+      <div className="alert alert-danger" role="alert">
+        This is not a valid email.
+      </div>
+    );
+  }
+};
+
 export default class Login extends Component {
-  constructor(prop) {
+  constructor(props) {
     super(props);
+    this.handleLogin = this.handleLogin.bind(this);
+    this.onChangeEmail = this.onChangeEmail.bind(this);
+    this.onChangePassword = this.onChangePassword.bind(this);
 
     this.state = {
       email: "",
@@ -96,7 +110,7 @@ export default class Login extends Component {
                 name="email"
                 value={this.state.email}
                 onChange={this.onChangeEmail}
-                validations={[required]}
+                validations={[required, email]}
               />
             </div>
 
