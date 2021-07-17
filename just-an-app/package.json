@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@babel/core": "7.12.3",
+    "@craco/craco": "^6.2.0",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
     "@svgr/webpack": "5.5.0",
     "@testing-library/jest-dom": "^5.14.1",
@@ -61,6 +62,7 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-validation": "^3.0.7",
+    "redux": "^4.1.0",
     "redux-thunk": "^2.3.0",
     "resolve": "1.18.1",
     "resolve-url-loader": "^3.1.2",
@@ -156,5 +158,11 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "postcss": "^7.0.36",
+    "redux-devtools-extension": "^2.13.9",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.4"
   }
 }
